@@ -1,0 +1,53 @@
+﻿<div class="modal-content">
+
+
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">Order Your Books Now</h3>
+        <button type="button" class="close" ng-click="$dismiss()" style="float:right">&times;</button>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <form class="form-horizontal" role="form">
+            <!--<h2>Register Form</h2>-->
+            <div class="form-group row">
+                <label class="control-label col-sm-2"><i class="fa fa-user"></i> Username</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" required placeholder="Enter Username" ng-model="studentOrderList.userName">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-2"><i class="fa fa-envelope"></i> Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" required placeholder="Enter Email" ng-model="studentOrderList.email">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-2"><i class="fa fa-book"></i> Bookname</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" required placeholder="Enter Bookname" ng-model="studentOrderList.bookName">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-2"><i class="fa fa-calendar"></i> Order Date</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" required placeholder="Enter Order Date" ng-model="studentOrderList.orderDate">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-2"><i class="fa fa-calendar"></i> Return Date</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" required placeholder="Enter Return Date" ng-model="studentOrderList.returnDate">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="orderBooks()">Order</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+
+
+</div>

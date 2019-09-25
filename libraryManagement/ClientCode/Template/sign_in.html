@@ -1,0 +1,117 @@
+﻿<style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    body {
+        background: url("/ClientCode/Template/signin.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        font-family: 'Font Awesome \5 Free';
+    }
+
+    ul {
+        margin-bottom: 50px;
+    }
+
+    ul a {
+        font-size: 29px;
+        color: white;
+    }
+
+    ul a:hover {
+        text-decoration: none;
+        color: rgba(11, 228, 181, 0.911);
+        background:transparent;
+    }
+
+    .label {
+        font-size: 19px;
+        color: white;
+        font-weight: normal;
+    }
+
+    .form-control {
+        background: transparent;
+        border: 0px;
+        border-bottom: 1px solid rgba(11, 228, 181, 0.911);
+        border-radius: 0px;
+        margin-bottom: 30px;
+        color: white;
+        font-size: 20px;
+        padding: 20px;
+    }
+
+    input[type="checkbox"] {
+        height: 15px;
+        width: 15px;
+    }
+
+    small {
+        color: white;
+        font-size: 18px;
+    }
+
+    button a {
+        color: white;
+    }
+
+    button a:hover {
+        background: transparent;
+        color: white;
+        text-decoration: none;
+    }
+
+    .btn-info {
+        border: 2px solid rgba(11, 228, 181, 0.911);
+        border-radius: 0px;
+        width: 360px;
+        margin-top: 20px;
+        font-size: 20px;
+        background: transparent;
+    }
+
+    .btn-info:hover {
+        background: rgba(11, 228, 181, 0.911);
+        border: 2px solid rgba(11, 228, 181, 0.911);
+    }
+
+    p {
+        font-size: 16px;
+        margin-top: 20px;
+        color: gray;
+    }
+
+    img {
+        height: 477px;
+        width: 450px;
+    }
+</style>
+        <div class="container" ng-controller="signInController">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="row" style="margin-top:120px; box-shadow: -1px 1px 50px 12px black;">
+                        <div class="col-md-6">
+                            <ul>
+                                <a href="#!/signin" style="border-bottom: 2px solid rgba(9, 196, 155, 0.829); padding: 10px;">Sign In </a>
+                                <a href="#!/signup">/ Sign Up</a>
+                            </ul>
+                            <label class="label control-label"><i class="fa fa-user"></i> Username </label>
+                            <input type="text" class="form-control" name="userName" required placeholder="Enter Your Username" ng-model="login.userName">
+                            <label class=" label control-label"><i class="fa fa-lock"></i> Password</label>
+                            <input type="password" class="form-control" name="password" required placeholder="Enter Your Password" ng-model="login.password">
+                            <input type="checkbox"> <small>Remember Me?</small>
+                            <button class="btn btn-info" ng-click="signIn()"><i class="fa fa-sign-in"></i> Sign In</button>
+                            <p class="text-center"><a href="#!/forgotpassword"style="color:white; background:transparent">Forgot Password ? </a></p>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="/ClientCode/Template/signin2.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

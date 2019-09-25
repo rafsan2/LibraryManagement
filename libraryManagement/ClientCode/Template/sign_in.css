@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background: url("D:/libraryManagement/signin/signin.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Font Awesome \5 Free';
+}
+
+ul {
+    margin-bottom: 50px; 
+}
+
+ul a {
+    font-size: 29px;
+    color: white;
+}
+
+ul a:hover {
+    text-decoration: none;
+    color: rgba(11, 228, 181, 0.911);
+}
+
+.label {
+    font-size: 19px;
+    color: white;
+    font-weight: normal;
+}
+
+.form-control {
+    background: transparent;
+    border: 0px;
+    border-bottom: 1px solid rgba(11, 228, 181, 0.911);
+    border-radius: 0px;
+    margin-bottom: 30px;
+    color: white;
+    font-size: 20px;
+    padding: 20px; 
+}
+
+input[type="checkbox"] {
+    height: 15px;
+    width: 15px;
+
+}
+
+small {
+    color: white;
+    font-size: 18px;
+}
+
+button a {
+    color: white;
+}
+
+button a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.btn-info {
+    border: 2px solid  rgba(11, 228, 181, 0.911);
+    border-radius: 0px;
+    width: 360px;
+    margin-top: 20px;
+    font-size: 20px;
+    background: transparent;
+}
+
+.btn-info:hover {
+    background: rgba(11, 228, 181, 0.911);
+    border: 2px solid rgba(11, 228, 181, 0.911);
+}
+
+p {
+    font-size: 16px;
+    margin-top: 20px;
+    color: gray;
+}
+
+img {
+    height: 477px;
+    width: 450px;
+}

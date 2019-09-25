@@ -1,0 +1,208 @@
+﻿<style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+    * {
+        margin: 0px;
+        padding: 0px
+    }
+
+    body {
+        background-image: url(/ClientCode/Template/sign_up.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    h1 {
+        font-size: 40px;
+        color: white;
+        margin-top: 250px;
+    }
+
+    p {
+        font-size: 18px;
+        color: white;
+    }
+
+    h3 {
+        font-size: 25px;
+        color: white;
+        margin-top: 80px;
+    }
+
+    .fa {
+        color: white;
+        margin-top: 80px;
+        padding-left: 170px;
+    }
+
+    hr {
+        margin-top: 1rem;
+        border-top: 1px solid rgb(252, 247, 247);
+    }
+
+    .col-md-5 {
+        margin-top: 80px;
+        box-shadow: -1px 1px 60px 10px black;
+        background: rgba(0, 0, 0, 0.4)
+    }
+
+    .label {
+        font-weight: normal;
+        margin-top: 15px;
+        color: white;
+        font-size: 19px;
+    }
+
+    .form-control {
+        background: transparent;
+        border: 0px;
+        border-radius: 0px;
+        border-bottom: 1px solid white;
+        font-size: 18px;
+        margin-top: 12px;
+        height: 40px;
+        color: white;
+    }
+
+    input[type = "radio"] {
+        margin-top: 22px;
+    }
+
+    .btn-info {
+        margin-top: 20px;
+        margin-left: 80px;
+        margin-bottom: 20px;
+        font-size: 18px;
+        width: 120px;
+    }
+
+    .btn-danger {
+        margin-top: 20px;
+        margin-left: 82px;
+        margin-bottom: 20px;
+        width: 120px;
+        font-size: 18px;
+    }
+
+    .btn-danger a{
+        background:transparent;
+        color:white;
+        text-decoration:none;
+    }
+    .fa-male {
+        padding-left: 4px;
+        margin-top: 8px;
+        }
+
+    .fa-female {
+        padding-left: 0px;
+        margin-top: 8px;
+    }
+</style>
+<div class="container"  ng-controller="signUpController">
+    <div class="row">
+        <div class="col-md-7">
+            <h1 class="text-left">Sign Up Form</h1>
+            <p class="text-left">
+                A LIBRARY IS NOY A LUXURY BUT ONE OF THE NECESSITIES OF LIFE. ~HENRY WARD BEECHER
+            </p>
+        </div>
+        <div class="col-md-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Sign Up Form</h3>
+                </div>
+                <div class="col-md-6">
+                    <i class="fa fa-pencil fa-2x"></i>
+                </div>
+            </div>
+            <hr>
+            <!--close-->
+            <form name="registerForm">
+                <div class="row">
+                    <label class=" label col-md-2 control-label" style="color:white">Firstname</label>
+                    <div class="col-md-10" name="form">
+                        <input type="text" class="form-control" name="firstName" required placeholder="Enter Your Firstname Here" ng-model="user.firstName">
+                    </div>
+                </div>
+                <div class="row">
+                    <label class=" label col-md-2 control-label" style="color:white">Lastname</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" name="lastName" required placeholder="Enter Your Lastname Here" ng-model="user.lastName">
+                    </div>
+                </div>
+                <div class="row">
+                    <label class=" label col-md-2 control-label" style="color:white">Fullname </label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" value="{{user.fullName()}}" name="fullName " required placeholder="according to Firstname & Lastname">
+                    </div>
+                </div>
+                <div class="row">
+                    <label class=" label col-md-2 control-label" style="color:white">Username </label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" name="username" required placeholder="Enter Your Username Here" ng-model="user.userName">
+                    </div>
+                </div>
+                <div class="row">
+                    <label class=" label col-md-2 control-label" style="color:white">Email</label>
+                    <div class="col-md-10">
+                        <input type="email" class="form-control" value="{{user.email()}}" name="email" required placeholder="Enter Your Email Here">
+                    </div>
+                </div>
+                <div class="row">
+                    <label class=" label col-md-2 control-label" style="color:white">Password</label>
+                    <div class="col-md-10">
+                        <input type="password" class="form-control" name="password" placeholder="Enter Your Password Here"  ng-model="user.password" required 
+                               ng-pattern="/^(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,20}$/"
+               
+                               <span ng-show="registerForm.password.$error"></span>
+                                <span style="color:red" ng-show="registerForm.password.$error.required">Required!</span>
+                                <span style="color:cornflowerblue" ng-show="!registerForm.password.$valid">
+                                    Password should be at least 8 characters
+                                    long and should contain one number,one character and one special
+                                    character
+                                </span>
+                                <!--<span style="color:green" ng-show="registerForm.password.$valid"></span>-->>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class=" label col-md-2 control-label" style="color:white">Confirm Password</label>
+                    <div class="col-md-10">
+                        <input type="password" class="form-control" name="confirmPassword" placeholder="Confirm Password" ng-model="user.confirmPassword" required
+                               ng-pattern="/^(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,20}$/"
+                               <span ng-show="registerForm.confirmPassword.$error"></span>
+                                <span style="color:red" ng-show="registerForm.confirmPassword.$error.required">Required!</span>
+                                <span style="color:cornflowerblue" ng-show="!registerForm.confirmPassword.$valid">
+                                    Password should be at least 8 characters
+                                    long and should contain one number,one character and one special
+                                    character
+                                </span>
+                                <!--<span style="color:green" ng-show="registerForm.confirmPassword.$valid"></span>-->>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class=" label col-md-2 control-label" style="color:white">Gender</label>
+                    <div class="col-md-10">
+                        <input type="radio" name="gm" value="male"><small style="color:white"><i class="fa fa-male"></i> Male</small>
+                        <input type="radio" name="gm" value="female"> <small style="color:white"><i class="fa fa-female"></i> Female</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class=" label col-md-2 control-label" style="color:white">Sign Up</label>
+                    <div class="col-md-10">
+                        <select class="form-control">
+                            <option>As a Faculty</option>
+                            <option>As a Student</option>
+                            <option>As a Librarian</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="submit" id="submit" class="btn btn-info" ng-click="saveUser()">Submit</button>
+                    <button type="submit" class="btn btn-danger" ng-click="pressCancel()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
